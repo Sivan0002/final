@@ -28,7 +28,7 @@ def predict():
 
         defaulter_mapping = {0: 'Non-Defaulter', 1: 'Defaulter'}
         predicted_result = defaulter_mapping[prediction[0]]
-        print(predicted_result)
+        
 
     return render_template('prediction.html', result=predicted_result)
 
