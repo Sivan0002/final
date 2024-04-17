@@ -10,15 +10,15 @@ def hello():
 @app.route('/prediction', methods = ['GET','POST'])
 def predict():
     if request.method == 'POST':
-        Yearly_Income = float(request.form['Yearly_Income'])
-        Total_Unpaid_CL = float(request.form['Total_Unpaid_CL'])
-        Unpaid_Amount = float(request.form['Unpaid_Amount'])
-        Account_Open = float(request.form['Account_Open'])
-        Debt_to_Income = float(request.form['Debt_to_Income'])
-        Lend_Amount = float(request.form['Lend_Amount'])
-        Sub_GGGrade = float(request.form['Sub_GGGrade'])
+        Num_Bank_Accounts = float(request.form['Num_Bank_Accounts'])
+        Num_Credit_Card = float(request.form['Num_Credit_Card'])
+        Interest_Rate = float(request.form['Interest_Rate'])
+        Num_of_Loan = float(request.form['Num_of_Loan'])
+        Delay_from_due_date = float(request.form['Delay_from_due_date'])
+        Outstanding_Debt = float(request.form['Outstanding_Debt'])
+        Changed_Credit_Limit	 = float(request.form['Changed_Credit_Limit	'])
 
-        features = [[Yearly_Income, Total_Unpaid_CL, Unpaid_Amount, Account_Open, Debt_to_Income, Lend_Amount, Sub_GGGrade]]
+        features = [[Num_Bank_Accounts, Num_Credit_Card, Interest_Rate, Num_of_Loan, Delay_from_due_date, Outstanding_Debt, Changed_Credit_Limit]]
         
         model = pickle.load(open('model.pkl', 'rb'))
         
@@ -26,7 +26,7 @@ def predict():
         
 
 
-        defaulter_mapping = {0: 'Non-Defaulter', 1: 'Defaulter'}
+        defaulter_mapping = {0: 'Good', 1: 'Poor'}
         predicted_result = defaulter_mapping[prediction[0]]
         
 
