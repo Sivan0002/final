@@ -25,7 +25,7 @@ def predict():
         
 
 
-        defaulter_mapping = {0: 'Good', 1: 'Poor', 2 : 'Standard'}
+        defaulter_mapping = {0: 'Good', 1: 'Poor', 2: 'Standard'}
         predicted_result = defaulter_mapping[prediction[0]]
         
 
