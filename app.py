@@ -16,8 +16,7 @@ def predict():
         Num_of_Loan = float(request.form['Num_of_Loan'])
         Delay_from_due_date = float(request.form['Delay_from_due_date'])
         Outstanding_Debt = float(request.form['Outstanding_Debt'])
-        Changed_Credit_Limit	 = float(request.form['Changed_Credit_Limit	'])
-
+        
         features = [[Num_Bank_Accounts, Num_Credit_Card, Interest_Rate, Num_of_Loan, Delay_from_due_date, Outstanding_Debt, Changed_Credit_Limit]]
         
         model = pickle.load(open('model.pkl', 'rb'))
