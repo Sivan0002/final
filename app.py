@@ -16,8 +16,13 @@ def predict():
         Num_of_Loan = float(request.form['Num_of_Loan'])
         Delay_from_due_date = float(request.form['Delay_from_due_date'])
         Outstanding_Debt = float(request.form['Outstanding_Debt'])
+        Monthly_Inhand_Salary = float(request.form['Monthly_Inhand_Salary'])
+        Credit_History_Age = float(request.form['Credit_History_Age'])
+        Total_EMI_per_month = float(request.form['Total_EMI_per_month'])
+        Monthly_Balance = float(request.form['Monthly_Balance'])
         
-        features = [[Num_Bank_Accounts, Num_Credit_Card, Interest_Rate, Num_of_Loan, Delay_from_due_date, Outstanding_Debt]]
+        
+        features = [[Num_Bank_Accounts, Num_Credit_Card, Interest_Rate, Num_of_Loan, Delay_from_due_date, Outstanding_Debt, Monthly_Inhand_Salary, Credit_History_Age, Total_EMI_per_month, Monthly_Balance]]
         
         model = pickle.load(open('model.pkl', 'rb'))
         
