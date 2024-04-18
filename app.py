@@ -20,17 +20,10 @@ def predict():
         Credit_History_Age = float(request.form['Credit_History_Age'])
         Total_EMI_per_month = float(request.form['Total_EMI_per_month'])
         Monthly_Balance = float(request.form['Monthly_Balance'])
-        Occupation_Accountant = float(request.form['Occupation_Accountant'])
-        Occupation_Doctor = float(request.form['Occupation_Doctor'])
-        Occupation_Entrepreneur = float(request.form['Occupation_Entrepreneur'])
-        Occupation_Lawyer = float(request.form['Occupation_Lawyer'])
-        Occupation_Mechanic = float(request.form['Occupation_Mechanic'])
-        Occupation_Writer = float(request.form['Occupation_Writer'])
-        Credit_Mix_Standard = float(request.form['Credit_Mix_Standard'])
-
         
         
-        features = [[Num_Bank_Accounts, Num_Credit_Card, Interest_Rate, Num_of_Loan, Delay_from_due_date, Outstanding_Debt, Monthly_Inhand_Salary, Credit_History_Age, Total_EMI_per_month, Monthly_Balance, Occupation_Accountant, Occupation_Doctor, Occupation_Entrepreneur, Occupation_Lawyer, Occupation_Mechanic, Occupation_Writer, Credit_Mix_Standard]]
+        
+        features = [[Num_Bank_Accounts, Num_Credit_Card, Interest_Rate, Num_of_Loan, Delay_from_due_date, Outstanding_Debt, Monthly_Inhand_Salary, Credit_History_Age, Total_EMI_per_month, Monthly_Balance]]
         
         model = pickle.load(open('model.pkl', 'rb'))
         
